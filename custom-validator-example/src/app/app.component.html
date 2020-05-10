@@ -1,0 +1,10 @@
+<h2>admin keyword is not allowed</h2>
+<h2>test keyword is not allowed using paramater</h2>
+<form [formGroup]="valForm">
+    <input type="text" id="firstName" name="FirstName" formControlName="firstName">
+    <div>
+    <span *ngIf='nameError.touched && nameError.errors?.required' class="error">First Name is required</span>
+    <span *ngIf='nameError.errors?.NameNotAllowed' class="error">Admin is not allowed</span>
+    <span *ngIf='nameError.errors?.ParamNameNotAllowed' class="error">{{nameError.errors.ParamNameNotAllowed.myvariable}} is not allowed</span>
+    </div>    
+</form>
